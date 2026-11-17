@@ -1,0 +1,36 @@
+
+@api_url=100.59.190.199
+@token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZWxsbyIsImlhdCI6MTc5Mzg4MDg5MSwiZXhwIjoxNzkzODgxNzkxfQ.ltDkJdJIwQK0_6PPQM4f7X3xRXKx8Bus8UYB5Ltb3vM
+
+
+###Login
+POST http://{{api_url}}/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "hello",
+    "password": "hello"
+}
+
+###Registro
+POST http://{{api_url}}/auth/registro HTTP/1.1
+content-type: application/json
+
+{
+    "username": "hello1",
+    "password": "hello1"
+}
+
+
+###Obtener todos los vehiculos
+GET http://{{api_url}}/vehiculo HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+
+###Obtener todos los categorias
+GET http://{{api_url}}/categoria HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+
