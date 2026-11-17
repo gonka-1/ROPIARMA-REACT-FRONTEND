@@ -4,6 +4,7 @@ import { useSession, obtenerNombreUsuario } from '../../context/SessionContext'
 import Formulario from '../../components/formulario/Formulario'
 import { validarEmail, validarPassword } from '../../utils/validaciones'
 import '../../styles/style-usuario.css'
+import styles from '../../components/formulario/formulario.module.css'
 
 const CAMPOS = [
   { nombre: 'email', etiqueta: 'Correo electrónico', tipo: 'email', placeholder: 'ejemplo@correo.com', requerido: true },
@@ -21,6 +22,12 @@ export default function UsuarioIngresar() {
   function validar(v) {
     return validarEmail(v.email) || validarPassword(v.password)
   }
+
+     function Principal() {
+        console.log("Navegacion principal");
+        navigate(`/`);
+        
+    }
 
   function ingresar(v, { mostrarMensaje }) {
     const correo = v.email.trim()
@@ -44,7 +51,7 @@ export default function UsuarioIngresar() {
     <div className="container my-5 d-flex justify-content-center align-items-center" style={{ minHeight: '65vh' }}>
       <div className="w-100" style={{ maxWidth: '450px' }}>
         {/* Contenedor tipo Tarjeta */}
-        <div className="card border-0 shadow-sm p-4 p-md-5 rounded-4 bg-white">
+        <div className="card border-0 shadow-sm p-4 p-md-6 rounded-4 bg-white">
           <div className="text-center mb-4">
             <h2 className="fw-bold text-dark m-0">Ingresar</h2>
             <p className="text-muted small mt-1">Inicia sesión en tu cuenta de Huerto Hogar</p>
@@ -61,6 +68,8 @@ export default function UsuarioIngresar() {
             claseBoton="w-100 py-2 fs-6 fw-bold"
           />
 
+          <button className={`btn ${styles.boton} w-80 py-2 fs-6 fw-bold`} onClick={Principal}>Volver</button>
+        
           {/* Recuadro informativo de credenciales de prueba */}
           <div className="alert alert-info border-0 rounded-3 p-3 mt-3 mb-0 small">
             <p className="fw-bold mb-1 text-dark">🔑 Accesos de prueba:</p>
