@@ -31,6 +31,10 @@ import AdminEmpleados from './pages/admin/AdminEmpleados'
 
 export const routes = createBrowserRouter([
   {
+    path: '/login',
+    element: <UsuarioIngresar/>
+  },
+  {
     path: '/',
     element: <Layout />,
     children: [
@@ -46,7 +50,6 @@ export const routes = createBrowserRouter([
       { path: 'perfil', element: <Perfil /> },
       { path: 'usuario/crear', element: <Usuario /> },
       { path: 'usuario/confirmar', element: <UsuarioConf /> },
-      { path: 'usuario/ingresar', element: <UsuarioIngresar /> },
       { path: 'admin/ingresar', element: <AdministradorIngresar /> }
     ]
   },
