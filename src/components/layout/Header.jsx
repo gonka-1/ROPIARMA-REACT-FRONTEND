@@ -150,7 +150,7 @@ export default function Header() {
               ) : (
                 <>
                   <li>
-                    <Link className="dropdown-item" to="/usuario/ingresar">
+                    <Link className="dropdown-item" to="/login">
                       Ingresar
                     </Link>
                   </li>
